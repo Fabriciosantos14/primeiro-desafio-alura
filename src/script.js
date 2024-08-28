@@ -60,11 +60,13 @@ function descriptografar(textoCriptografado) {
     return textoDescriptografado;
 }
 
-// Função para capturar o texto criptografado e descriptografá-lo
 function descriptografaText() {
     const inputText = document.getElementById('inputText').value;
     const textoDescriptografado = descriptografar(inputText);
     
-    document.getElementById('outputMessage').textContent = textoDescriptografado;
-    document.getElementById('imagePlaceholder').style.display = 'none'; // Esconder a imagem
+    const messageDiv = document.getElementById('mmss');
+    messageDiv.innerHTML = `
+        <p id="outputText">${textoDescriptografado}</p>
+        <button onclick="copiarTexto()">Copiar texto</button>
+    `;
 }
